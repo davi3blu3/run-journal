@@ -17,20 +17,33 @@ export class ActivityService {
 
   getTotalDistance(allActivities: IActivity[]){
     var totalDistance = 0;
-    for(var i = 0; i < allActivities.length; i++){
-      totalDistance += allActivities[i].distance;
-    }
+    // for(var i = 0; i < allActivities.length; i++){
+    //   totalDistance += allActivities[i].distance;
+    // }
+
+    allActivities.forEach(function(activity){
+      totalDistance += activity.distance;
+    })
+
     return totalDistance;
   }
 
   getFirstDate(allActivities: IActivity[]){
     var earliestDate = new Date("01/01/9999");
-    for(var i = 0; i < allActivities.length; i++){
-      var currentDate = allActivities[i].date;
-      if( currentDate < earliestDate ) {
-        earliestDate = currentDate;
+
+    // for(var i = 0; i < allActivities.length; i++){
+    //   var currentDate = allActivities[i].date;
+    //   if (currentDate < earliestDate) {
+    //     earliestDate = currentDate;
+    //   }
+    // }
+
+    allActivities.forEach(function(activity){
+      if (activity.date < earliestDate) {
+        earliestDate = activity.date;
       }
-    }
+    })
+
     return earliestDate;
   }
 
