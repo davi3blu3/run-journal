@@ -19,7 +19,7 @@ import { appRoutes } from '../routes';
     MapComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
     FormsModule,
     HttpModule,
     RouterModule.forRoot(appRoutes)
