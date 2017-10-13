@@ -9,7 +9,7 @@
 /node_modules
 
 # environment vars
-!/environment.ts
+/src/environments
 
 # IDEs and editors
 /.idea
